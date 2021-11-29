@@ -1,0 +1,377 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-white-dark: #fefefe;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-secondary: hsla(182, 63%, 54%);
+  --clr-black: #222;
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+html {
+  scroll-behavior: smooth;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  position: relative;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.logo) {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+/*  global classes */
+
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-black);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+}
+.btn:hover {
+  color: var(--clr-white);
+  background: var(--clr-black);
+}
+
+.topic {
+  text-align: center;
+}
+
+#about,
+#project,
+#contact {
+  min-height: 600px;
+}
+
+/* 
+=============
+SINGLE STYLES
+=============
+*/
+
+/* nav */
+
+.nav {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(#000, #00000000),
+    url('https://res.cloudinary.com/dikeogwu1/image/upload/v1638101235/portfolio%20images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash_ipjcxa.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav-wrapper {
+  background: transparent;
+  transition: var(--transition);
+  padding: 1rem;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 3px 3px var(--clr-grey-6);
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-header .logo,
+.nav-header .btn {
+  width: fit-content;
+}
+
+.btn-menu {
+  background: var(--clr-white);
+}
+
+.btn-menu:hover {
+  background: #000;
+}
+
+.letter-f {
+  font-size: 1.5em;
+  color: #071;
+}
+
+.logo {
+  color: var(--clr-white-dark);
+  letter-spacing: 0.1rem;
+  text-shadow: 0px 2px 0px #f12550;
+  font-size: 1.25rem;
+}
+
+/* links */
+
+.ul-wrapper {
+  margin-top: 2rem;
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.show-links {
+  height: 250px;
+}
+
+.ul-wrapper li {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.ul-wrapper li a {
+  color: var(--clr-white-dark);
+  text-shadow: 2px 0px 0px #e13;
+  font-size: 1.25rem;
+  transition: var(--transition);
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.ul-wrapper li a:hover {
+  color: var(--clr-primary-4);
+  background: var(--clr-green-light);
+  padding-left: 1rem;
+}
+
+.hire-me {
+  position: relative;
+  z-index: 2;
+  border: 1px solid #fff;
+  padding: 0.5rem 0;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.hire-me:hover .flipper {
+  width: 100%;
+}
+
+.flipper {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: var(--clr-green-light);
+  transition: var(--transition);
+}
+
+/* self description */
+
+.p-desc {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--clr-white-dark);
+  padding-top: 6rem;
+}
+
+.hi {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.am {
+  color: #e13;
+}
+
+.fabian {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  background-image: linear-gradient(to right, transparent, #071, #e13);
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: back 5s linear infinite;
+}
+
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+.my-name p {
+  color: var(--clr-primary-7);
+}
+
+/* 
+=========
+ABOUT ME
+=========
+*/
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+
+  /* single stles */
+
+  .btn-menu {
+    display: none;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* links */
+  .ul-wrapper {
+    margin-right: 1rem;
+    margin-top: 0;
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .ul-wrapper li {
+    display: inline;
+    margin-bottom: 0;
+  }
+
+  .ul-wrapper li a {
+    padding: 0 1rem;
+    display: inline;
+  }
+
+  .ul-wrapper li a:hover {
+    background: transparent;
+  }
+
+  .p-desc {
+    width: 50%;
+  }
+}
