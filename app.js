@@ -5,6 +5,9 @@ const navWrapper = document.querySelector('.nav-wrapper')
 const aboutWrapper = document.querySelector('.about-wrapper')
 const hire = document.querySelector('.why-hire-me-wrapper')
 const copyright = document.querySelector('.copy-date')
+const project1 = document.querySelector('.project-1')
+const project2 = document.querySelector('.project-2')
+const project3 = document.querySelector('.project-3')
 const nav = document.querySelector('.nav')
 // select links
 const scrollLinks = document.querySelectorAll('.scroll-link')
@@ -26,6 +29,12 @@ window.addEventListener('scroll', () => {
   if (window.scrollY >= 570) {
     hire.classList.add('show-hire')
     aboutWrapper.classList.add('show-about')
+  }
+
+  if (window.scrollY >= 1240) {
+    project1.classList.add('show-project-1')
+    project2.classList.add('show-project-2')
+    project3.classList.add('show-project-3')
   }
 })
 

@@ -426,6 +426,22 @@ PROJECT
 .first-p-wrapper {
   box-shadow: var(--dark-shadow);
   margin: 2rem 0;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.show-project-1 {
+  transform: scale(1);
+}
+
+.show-project-2 {
+  transition-delay: 1s;
+  transform: scale(1);
+}
+
+.show-project-3 {
+  transition-delay: 2s;
+  transform: scale(1);
 }
 
 .p-img-wrapper {
@@ -611,10 +627,18 @@ FOOTER
 =========
 */
 
-footer {
+#footer {
   background: var(--clr-black);
   text-align: center;
   overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-source {
+  background: #e13;
 }
 
 @media screen and (min-width: 768px) {
