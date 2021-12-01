@@ -2,12 +2,14 @@
 const toggler = document.querySelector('.btn-menu')
 const linksWrapper = document.querySelector('.ul-wrapper')
 const navWrapper = document.querySelector('.nav-wrapper')
+const aboutWrapper = document.querySelector('.about-wrapper')
+const hire = document.querySelector('.why-hire-me-wrapper')
+const copyright = document.querySelector('.copy-date')
 const nav = document.querySelector('.nav')
 // select links
 const scrollLinks = document.querySelectorAll('.scroll-link')
 
 // ***** EVENT LISTENERS *****
-
 // *menu*toggler*
 toggler.addEventListener('click', () => {
   linksWrapper.classList.toggle('show-links')
@@ -19,6 +21,11 @@ window.addEventListener('scroll', () => {
     navWrapper.classList.add('fixed-nav')
   } else {
     navWrapper.classList.remove('fixed-nav')
+  }
+
+  if (window.scrollY >= 570) {
+    hire.classList.add('show-hire')
+    aboutWrapper.classList.add('show-about')
   }
 })
 
@@ -55,3 +62,6 @@ scrollLinks.forEach((link) => {
     linksWrapper.classList.remove('show-links')
   })
 })
+
+// copyright date
+copyright.textContent = new Date().getFullYear()
