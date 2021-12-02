@@ -340,23 +340,6 @@ ABOUT ME
   transition: all 0.6s linear;
 }
 
-.why-hire-me-wrapper {
-  transform: translateX(105%);
-  transition-delay: 0.6s;
-}
-
-.show-hire {
-  transform: translateX(0);
-}
-
-.about-wrapper {
-  transform: translateX(-105%);
-}
-
-.show-about {
-  transform: translateX(0);
-}
-
 .skills-tittle {
   color: #071;
 }
@@ -742,6 +725,23 @@ FOOTER
 
   .yarn-skills {
     margin-left: 1.75rem;
+  }
+
+  .why-hire-me-wrapper {
+    transform: translateX(105%);
+    transition-delay: 0.6s;
+  }
+
+  .show-hire {
+    transform: translateX(0);
+  }
+
+  .about-wrapper {
+    transform: translateX(-105%);
+  }
+
+  .show-about {
+    transform: translateX(0);
   }
 
   /* 
