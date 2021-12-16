@@ -377,6 +377,20 @@ ABOUT ME
   margin: 0 auto;
 }
 
+.why-hire-me-wrapper {
+  transform: translateX(105%);
+}
+.add-hire {
+  transform: translateX(0);
+}
+
+.about-wrapper {
+  transform: translateX(-105%);
+}
+.add-about {
+  transform: translateX(0);
+}
+
 .resume .btn a:hover {
   color: var(--clr-white);
 }
@@ -409,21 +423,29 @@ PROJECT
 .first-p-wrapper {
   box-shadow: var(--dark-shadow);
   margin: 2rem 0;
+}
+
+.project-1 {
   transform: scale(0);
   transition: 1s;
 }
-
-.show-project-1 {
+.show-p-1 {
   transform: scale(1);
 }
 
-.show-project-2 {
-  transition-delay: 1s;
+.project-2 {
+  transform: scale(0);
+  transition: 1s;
+}
+.show-p-2 {
   transform: scale(1);
 }
 
-.show-project-3 {
-  transition-delay: 2s;
+.project-3 {
+  transform: scale(0);
+  transition: 1s;
+}
+.show-p-3 {
   transform: scale(1);
 }
 
@@ -708,6 +730,10 @@ FOOTER
     margin-bottom: 0;
   }
 
+  .why-hire-me-wrapper {
+    transition-delay: 0.6s;
+  }
+
   /* MY SKILLS */
   .skills-wrapper {
     border-left: 1px solid #000;
@@ -727,20 +753,10 @@ FOOTER
     margin-left: 1.75rem;
   }
 
-  .why-hire-me-wrapper {
-    transform: translateX(105%);
-    transition-delay: 0.6s;
-  }
-
-  .show-hire {
+  .show-about {
     transform: translateX(0);
   }
-
-  .about-wrapper {
-    transform: translateX(-105%);
-  }
-
-  .show-about {
+  .show-hire {
     transform: translateX(0);
   }
 
@@ -758,6 +774,20 @@ PROJECT
 
   .first-p-wrapper {
     margin: 0;
+  }
+
+  .show-project-1 {
+    transform: scale(1);
+  }
+
+  .show-project-2 {
+    transition-delay: 1s;
+    transform: scale(1);
+  }
+
+  .show-project-3 {
+    transition-delay: 2s;
+    transform: scale(1);
   }
 
   /* 

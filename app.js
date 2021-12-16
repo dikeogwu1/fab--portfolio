@@ -2,6 +2,8 @@
 const toggler = document.querySelector('.btn-menu')
 const linksWrapper = document.querySelector('.ul-wrapper')
 const navWrapper = document.querySelector('.nav-wrapper')
+const about = document.getElementById('about')
+const project = document.getElementById('project')
 const aboutWrapper = document.querySelector('.about-wrapper')
 const hire = document.querySelector('.why-hire-me-wrapper')
 const copyright = document.querySelector('.copy-date')
@@ -20,21 +22,38 @@ toggler.addEventListener('click', () => {
 
 // *fixed*nav*
 window.addEventListener('scroll', () => {
+  const navHeight = navWrapper.getBoundingClientRect().height
+
   if (window.scrollY > 70) {
     navWrapper.classList.add('fixed-nav')
   } else {
     navWrapper.classList.remove('fixed-nav')
   }
 
-  if (window.scrollY >= 570) {
+  if (window.scrollY >= about.offsetTop - navHeight) {
     hire.classList.add('show-hire')
     aboutWrapper.classList.add('show-about')
   }
+  if (window.scrollY >= hire.offsetTop - navHeight) {
+    hire.classList.add('add-hire')
+  }
+  if (window.scrollY >= aboutWrapper.offsetTop - navHeight) {
+    aboutWrapper.classList.add('add-about')
+  }
 
-  if (window.scrollY >= 1240) {
+  if (window.scrollY >= project.offsetTop - navHeight) {
     project1.classList.add('show-project-1')
     project2.classList.add('show-project-2')
     project3.classList.add('show-project-3')
+  }
+  if (window.scrollY >= project1.offsetTop - navHeight) {
+    project1.classList.add('show-p-1')
+  }
+  if (window.scrollY >= project2.offsetTop - navHeight) {
+    project2.classList.add('show-p-2')
+  }
+  if (window.scrollY >= project3.offsetTop - navHeight) {
+    project3.classList.add('show-p-3')
   }
 })
 
