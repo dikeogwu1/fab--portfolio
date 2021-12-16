@@ -331,6 +331,8 @@ ABOUT ME
   margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
+  overflow: hidden;
 }
 
 .why-hire-me-wrapper,
@@ -380,14 +382,13 @@ ABOUT ME
 .why-hire-me-wrapper {
   transform: translateX(105%);
 }
-.add-hire {
-  transform: translateX(0);
-}
-
 .about-wrapper {
   transform: translateX(-105%);
 }
-.add-about {
+.show-about {
+  transform: translateX(0);
+}
+.show-hire {
   transform: translateX(0);
 }
 
@@ -429,10 +430,9 @@ PROJECT
   transform: scale(0);
   transition: 1s;
 }
-.show-p-1 {
+.show-project-1 {
   transform: scale(1);
 }
-
 .project-2 {
   transform: scale(0);
   transition: 1s;
@@ -753,13 +753,6 @@ FOOTER
     margin-left: 1.75rem;
   }
 
-  .show-about {
-    transform: translateX(0);
-  }
-  .show-hire {
-    transform: translateX(0);
-  }
-
   /* 
 ========
 PROJECT
@@ -776,15 +769,17 @@ PROJECT
     margin: 0;
   }
 
-  .show-project-1 {
-    transform: scale(1);
+  .project-2 {
+    transition-delay: 1s;
+  }
+  .project-3 {
+    transition-delay: 2s;
   }
 
   .show-project-2 {
     transition-delay: 1s;
     transform: scale(1);
   }
-
   .show-project-3 {
     transition-delay: 2s;
     transform: scale(1);

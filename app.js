@@ -34,25 +34,17 @@ window.addEventListener('scroll', () => {
     hire.classList.add('show-hire')
     aboutWrapper.classList.add('show-about')
   }
-  if (window.scrollY >= hire.offsetTop - navHeight) {
-    hire.classList.add('add-hire')
-  }
-  if (window.scrollY >= aboutWrapper.offsetTop - navHeight) {
-    aboutWrapper.classList.add('add-about')
-  }
 
   if (window.scrollY >= project.offsetTop - navHeight) {
     project1.classList.add('show-project-1')
     project2.classList.add('show-project-2')
     project3.classList.add('show-project-3')
   }
-  if (window.scrollY >= project1.offsetTop - navHeight) {
-    project1.classList.add('show-p-1')
-  }
-  if (window.scrollY >= project2.offsetTop - navHeight) {
+
+  if (window.scrollY >= project2.offsetTop - navHeight - 100) {
     project2.classList.add('show-p-2')
   }
-  if (window.scrollY >= project3.offsetTop - navHeight) {
+  if (window.scrollY >= project3.offsetTop - navHeight - 100) {
     project3.classList.add('show-p-3')
   }
 })
