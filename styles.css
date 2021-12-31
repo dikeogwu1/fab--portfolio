@@ -427,7 +427,7 @@ ABOUT ME
 .achievment {
   border: 2px solid #555;
   display: flex;
-  height: 220px;
+  height: auto;
   border-radius: var(--radius);
 }
 
