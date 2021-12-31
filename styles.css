@@ -169,6 +169,8 @@ SINGLE STYLES
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
 }
 
 .nav-wrapper {
@@ -311,6 +313,8 @@ SINGLE STYLES
 
 .my-name p {
   color: var(--clr-primary-7);
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .gmail {
@@ -319,6 +323,24 @@ SINGLE STYLES
 
 .d-res {
   color: #071;
+}
+
+.nav-res {
+  position: absolute;
+  bottom: -50px;
+  left: 40%;
+  z-index: -2;
+  visibility: hidden;
+  transform: translateX(-35%);
+  animation: slidein 1s linear 3s forwards;
+}
+
+@keyframes slidein {
+  to {
+    bottom: 20px;
+    z-index: 2;
+    visibility: visible;
+  }
 }
 
 /* 
@@ -379,21 +401,45 @@ ABOUT ME
   margin: 0 auto;
 }
 
-.why-hire-me-wrapper {
-  transform: translateX(105%);
+.react-logo {
+  transform: rotate(360deg);
+  transform-origin: center;
+  animation: rotate infinite 1.5s linear;
 }
-.about-wrapper {
-  transform: translateX(-105%);
-}
-.show-about {
-  transform: translateX(0);
-}
-.show-hire {
-  transform: translateX(0);
+@keyframes rotate {
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .resume .btn a:hover {
   color: var(--clr-white);
+}
+
+.more-info-wrapper {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.achievment {
+  border: 2px solid #555;
+  display: flex;
+  height: 220px;
+  border-radius: var(--radius);
+}
+
+.dark-shade {
+  width: 20px;
+  height: 100%;
+  background-color: #555;
+  margin-right: 15px;
+}
+
+.achiev-box {
+  padding: 1rem;
 }
 
 /* 
@@ -427,26 +473,30 @@ PROJECT
 }
 
 .project-1 {
-  transform: scale(0);
+  perspective: 1000px;
+  transform-origin: center;
+  transform: rotateY(180deg);
   transition: 1s;
 }
 .show-project-1 {
-  transform: scale(1);
+  transform: rotateY(0deg);
 }
 .project-2 {
-  transform: scale(0);
+  perspective: 1000px;
+  transform: rotateY(180deg);
   transition: 1s;
 }
 .show-p-2 {
-  transform: scale(1);
+  transform: rotateY(0);
 }
 
 .project-3 {
-  transform: scale(0);
+  perspective: 1000px;
+  transform: rotateY(180deg);
   transition: 1s;
 }
 .show-p-3 {
-  transform: scale(1);
+  transform: rotateY(0);
 }
 
 .p-img-wrapper {
@@ -619,6 +669,7 @@ CONTACT ME
   height: 35px;
   transition: var(--transition);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .submit-btn:hover {
@@ -649,6 +700,10 @@ FOOTER
 @media screen and (min-width: 768px) {
   .form {
     width: 80%;
+  }
+
+  .nav-res {
+    transform: translateX(10%);
   }
 }
 
@@ -732,6 +787,16 @@ FOOTER
 
   .why-hire-me-wrapper {
     transition-delay: 0.6s;
+    transform: translateX(105%);
+  }
+  .about-wrapper {
+    transform: translateX(-105%);
+  }
+  .show-about {
+    transform: translateX(0);
+  }
+  .show-hire {
+    transform: translateX(0);
   }
 
   /* MY SKILLS */
@@ -751,6 +816,15 @@ FOOTER
 
   .yarn-skills {
     margin-left: 1.75rem;
+  }
+
+  .more-info-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .achievment {
+    height: 250px;
   }
 
   /* 
