@@ -201,10 +201,10 @@ SINGLE STYLES
 }
 .logo {
   display: flex;
+  align-items: center;
 }
 
 .logo-img-box {
-  margin-top: 3px;
   width: 35px;
   height: 35px;
 }
