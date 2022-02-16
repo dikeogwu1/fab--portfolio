@@ -328,6 +328,7 @@ SINGLE STYLES
   color: var(--clr-primary-7);
   font-size: 1.25rem;
   margin-top: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .gmail {
@@ -425,6 +426,16 @@ ABOUT ME
   }
 }
 
+.figma-wrapper {
+  background: #000;
+  border-radius: 3px;
+  display: grid;
+  place-content: center;
+}
+.fa-figma {
+  color: #fff;
+  font-size: 1.5rem;
+}
 .resume .btn a:hover {
   color: var(--clr-white);
 }
@@ -438,7 +449,7 @@ ABOUT ME
 }
 
 .achievment {
-  border: 2px solid #555;
+  border: 2px solid #000;
   display: flex;
   height: auto;
   border-radius: var(--radius);
@@ -447,12 +458,20 @@ ABOUT ME
 .dark-shade {
   width: 20px;
   height: 100%;
-  background-color: #555;
-  margin-right: 15px;
+  background-color: #222;
+  margin-right: 0;
 }
 
 .achiev-box {
   padding: 1rem;
+  background: var(--clr-primary-2);
+  width: 100%;
+}
+.achiev-box h4 {
+  color: #000;
+}
+.achievment-desc p {
+  color: var(--clr-grey-6);
 }
 
 /* 
@@ -462,17 +481,19 @@ PROJECT
 */
 
 #project {
+  padding-top: 1.5rem;
   background-image: linear-gradient(
       to bottom right,
-      #49a6e9e0,
-      hsl(125, 71%, 66%)
+      #49a6e9c4,
+      var(--clr-grey-5)
     ),
     url('https://res.cloudinary.com/dikeogwu1/image/upload/v1638288098/portfolio%20images/photo-1592609931095-54a2168ae893_pztada.jpg');
-  box-shadow: 0px 0px 3px 4px var(--clr-grey-8);
+  box-shadow: 0px 0px 5px 4px #777;
 }
 
 #project h2 {
   margin-bottom: 3.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .project-container {
@@ -550,6 +571,7 @@ CONTACT ME
 
 .contact-heading {
   padding: 4rem 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* get in touch */
@@ -673,7 +695,7 @@ CONTACT ME
 .text-area {
   height: 80px;
   margin-bottom: 0.25rem;
-  padding-left: 0.25rem;
+  padding: 0.5rem;
   border-radius: 5px;
   font-size: 1.1rem;
 }
@@ -845,6 +867,9 @@ FOOTER
 PROJECT
 ========
 */
+  #project {
+    margin-top: 8.5rem;
+  }
   .project-container {
     width: 90%;
     display: grid;
