@@ -4,7 +4,7 @@ Fonts
 ===============
 */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Great+Vibes&display=swap');
 /*
 =============== 
 Variables
@@ -36,7 +36,7 @@ Variables
   --clr-grey-7: hsl(211, 27%, 70%);
   --clr-grey-8: hsl(210, 31%, 80%);
   --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey-10: hsl(206, 33%, 96%)
   --clr-white: #fff;
   --clr-white-dark: #fefefe;
   --clr-red-dark: hsl(360, 67%, 44%);
@@ -45,6 +45,7 @@ Variables
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-secondary: hsla(182, 63%, 54%);
   --clr-black: #222;
+  --clr-white: #fff;
   --clr-gold: #c59d5f;
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
@@ -147,8 +148,7 @@ p {
 }
 
 #about,
-#contact,
-#project {
+#contact {
   min-height: 600px;
   margin: 3rem 1rem;
 }
@@ -162,7 +162,7 @@ SINGLE STYLES
 /* nav */
 
 .nav {
-  height: 100vh;
+  height: 42rem;
   width: 100%;
   background-image: linear-gradient(#000, #00000000),
     url('https://res.cloudinary.com/dikeogwu1/image/upload/v1638101235/portfolio%20images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash_ipjcxa.jpg');
@@ -293,18 +293,45 @@ SINGLE STYLES
 /* self description */
 
 .p-desc {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: var(--clr-white-dark);
-  padding-top: 6rem;
+  padding: 0 1rem;
+}
+.home-lottie-box{
+    width: 300px;
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+  }
+  .home-lottie{
+    width: 300px;
+    height: 300px;
+    background: transparent;
+  }
+  .nav-res {
+  position: relative;
+  bottom: -50px;
+  width: 100%;
+  z-index: -2;
+  visibility: hidden;
+  transform: translateX(-35%);
+  animation: slidein 1s linear 3s forwards;
+}
+@keyframes slidein {
+  to {
+    bottom: 25px;
+    z-index: 2;
+    visibility: visible;
+  }
 }
 
 .hi {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .am {
   color: #e13;
 }
@@ -323,9 +350,13 @@ SINGLE STYLES
     background-position: 2000px 0;
   }
 }
-
+.my-name h4{
+  font-size: 1.15rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .my-name p {
   color: var(--clr-primary-7);
+  max-width: 550px;
   font-size: 1.25rem;
   margin-top: 1.5rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -337,24 +368,8 @@ SINGLE STYLES
 
 .d-res {
   color: #071;
-}
-
-.nav-res {
-  position: absolute;
-  bottom: -50px;
-  left: 40%;
-  z-index: -2;
-  visibility: hidden;
-  transform: translateX(-35%);
-  animation: slidein 1s linear 3s forwards;
-}
-
-@keyframes slidein {
-  to {
-    bottom: 20px;
-    z-index: 2;
-    visibility: visible;
-  }
+  width: 100%;
+  border: 1px solid var(--clr-grey-4);
 }
 
 /* 
@@ -370,34 +385,38 @@ ABOUT ME
   width: 100%;
   overflow: hidden;
 }
-
+.about-intro{
+  font-family: 'Great Vibes', cursive;
+}
+.about-intro-text{
+  font-family: 'Crimson Text', serif;
+  font-size: 1.1rem;
+}
 .why-hire-me-wrapper,
 .skills-wrapper,
 .about-wrapper {
   margin-bottom: 2rem;
   transition: all 0.6s linear;
 }
-
+.tech-talent{
+  color: var(--clr-green-dark);
+}
+/* skills */
 .skills-tittle {
   color: #071;
 }
-
-/* skills */
-
 .skills-logo {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
-
 .skills-logo img {
   object-fit: cover;
 }
-
 .skills-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: center;
 }
-
 .html-skills,
 .css-skills,
 .js-skills,
@@ -408,9 +427,9 @@ ABOUT ME
 .yarn-skills,
 .redux-skills,
 .git-skills {
-  width: fit-content;
+  width: 60px;
+  margin-top: 0.5rem;
 }
-
 .skills-logo {
   margin: 0 auto;
 }
@@ -426,16 +445,6 @@ ABOUT ME
   }
 }
 
-.figma-wrapper {
-  background: #000;
-  border-radius: 3px;
-  display: grid;
-  place-content: center;
-}
-.fa-figma {
-  color: #fff;
-  font-size: 1.5rem;
-}
 .resume .btn a:hover {
   color: var(--clr-white);
 }
@@ -446,6 +455,7 @@ ABOUT ME
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 5rem;
+  overflow: hidden;
 }
 
 .achievment {
@@ -453,6 +463,7 @@ ABOUT ME
   display: flex;
   height: auto;
   border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
 }
 
 .dark-shade {
@@ -464,16 +475,27 @@ ABOUT ME
 
 .achiev-box {
   padding: 1rem;
-  background: var(--clr-primary-2);
+  background: rgb(25, 97, 9);
   width: 100%;
 }
 .achiev-box h4 {
-  color: #000;
+  color: #fff;
 }
 .achievment-desc p {
   color: var(--clr-grey-6);
 }
-
+.why-hire-box{
+  display: flex;
+  max-width: 100%;
+}
+.chevron-box{
+  width: 25px;
+  height: 25px;
+}
+.chevron{
+  width: 100%;
+  height: 100%;
+}
 /* 
 ========
 PROJECT
@@ -481,18 +503,33 @@ PROJECT
 */
 
 #project {
-  padding-top: 1.5rem;
-  background-image: linear-gradient(
-      to bottom right,
-      #49a6e9c4,
-      var(--clr-grey-5)
-    ),
+  /* padding-top: 1.5rem; */
+  background-image: linear-gradient(to bottom right, #317bb0c4, #5e3),
     url('https://res.cloudinary.com/dikeogwu1/image/upload/v1638288098/portfolio%20images/photo-1592609931095-54a2168ae893_pztada.jpg');
-  box-shadow: 0px 0px 5px 4px #777;
+  padding: 3rem 0;
+  position: relative;
 }
-
-#project h2 {
+#project::before{
+  width: 100%;
+  height: 10px;
+  content: '';
+  position: absolute;
+  top: 0;
+background-image: linear-gradient(to bottom , var(--clr-grey-9), #5e3);
+  border-radius: 40px;
+}
+.projrct-topic-wrapper{
   margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.project-lottie{
+  width: 98%;
+}
+#project h3 {
+  color: #000;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -554,9 +591,9 @@ PROJECT
   margin-top: 1.75rem;
   padding: 0 0.75rem;
 }
-
 .project-text p {
-  color: hsla(59, 100%, 70%, 0.702);
+  color: var(--clr-grey-2);
+  min-height: 120px;
 }
 
 .project-links-wrapper a {
@@ -617,7 +654,7 @@ CONTACT ME
 
 .intouch-topic-wrapper p {
   color: var(--clr-white);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #intouch-items-wrapper {
@@ -648,6 +685,7 @@ CONTACT ME
 
 .intouch-item-1 p {
   font-size: 1rem;
+  color: var(--clr-grey-6);
 }
 
 .icon-box {
@@ -720,12 +758,23 @@ FOOTER
 
 #footer {
   background: var(--clr-black);
+  padding-top: 1.5rem;
   text-align: center;
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+}
+#footer::before{
+  width: 100%;
+  height: 10px;
+  content: '';
+  position: absolute;
+  top: 0;
+background-image: linear-gradient(to bottom , var(--clr-grey-9), #5e3);
+  border-radius: 40px;
 }
 
 .portfolio-source {
@@ -779,7 +828,7 @@ FOOTER
 
   /* links */
   .ul-wrapper {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     margin-top: 0;
     height: auto !important;
     overflow: visible;
@@ -800,8 +849,27 @@ FOOTER
   }
 
   .p-desc {
-    width: 50%;
+    width: 100%;
+    margin-top: 6rem;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
+  .home-lottie-box{
+    order: 2;
+    width: 350px;
+    height: 350px;
+  }
+  .home-lottie{
+    width: 360px;
+    height: 300px;
+  }
+@keyframes slidein {
+  to {
+    bottom: 20px;
+    z-index: 2;
+    visibility: visible;
+  }
+}
   /* 
   ==========
   ABOUT ME
@@ -849,10 +917,6 @@ FOOTER
     padding: 0.5rem;
   }
 
-  .yarn-skills {
-    margin-left: 1.75rem;
-  }
-
   .more-info-wrapper {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -876,7 +940,13 @@ PROJECT
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-
+.projrct-topic-wrapper{
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
   .first-p-wrapper {
     margin: 0;
   }

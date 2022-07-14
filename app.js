@@ -11,6 +11,7 @@ const project1 = document.querySelector('.project-1')
 const project2 = document.querySelector('.project-2')
 const project3 = document.querySelector('.project-3')
 const nav = document.querySelector('.nav')
+
 // select links
 const scrollLinks = document.querySelectorAll('.scroll-link')
 
@@ -82,6 +83,51 @@ scrollLinks.forEach((link) => {
     linksWrapper.classList.remove('show-links')
   })
 })
-
 // copyright date
 copyright.textContent = new Date().getFullYear()
+// Gsap animation !!!
+// Gsap scrolltriggerPlugin
+
+gsap.registerPlugin(ScrollTrigger)
+gsap.fromTo(
+  `.achiev-1`,
+  {
+    y: 200,
+    duration: 3,
+  },
+  {
+    y: 0,
+    scrollTrigger: {
+      trigger: `.achiev-1`,
+      toggleActions: 'restart reverse restart none ',
+    },
+  }
+)
+gsap.fromTo(
+  `.achiev-2`,
+  {
+    y: 200,
+    duration: 3,
+  },
+  {
+    y: 0,
+    scrollTrigger: {
+      trigger: `.achiev-2`,
+      toggleActions: 'restart reverse restart none ',
+    },
+  }
+)
+gsap.fromTo(
+  `.achiev-3`,
+  {
+    y: 200,
+    duration: 3,
+  },
+  {
+    y: 0,
+    scrollTrigger: {
+      trigger: `.achiev-3`,
+      toggleActions: 'restart reverse restart none ',
+    },
+  }
+)
